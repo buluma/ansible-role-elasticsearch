@@ -1,12 +1,12 @@
 # Ansible Role: Elasticsearch
 
-[![CI](https://github.com/geerlingguy/ansible-role-elasticsearch/workflows/CI/badge.svg?event=push)](https://github.com/geerlingguy/ansible-role-elasticsearch/actions?query=workflow%3ACI)
+[![CI](https://github.com/buluma/ansible-role-elasticsearch/workflows/CI/badge.svg?event=push)](https://github.com/buluma/ansible-role-elasticsearch/actions?query=workflow%3ACI)
 
 An Ansible Role that installs Elasticsearch on RedHat/CentOS or Debian/Ubuntu.
 
 ## Requirements
 
-Requires at least Java 8. You can use the [`geerlingguy.java`](https://github.com/geerlingguy/ansible-role-java) to easilly install Java.
+Requires at least Java 8. You can use the [`buluma.java`](https://github.com/buluma/ansible-role-java) to easilly install Java.
 
 ## Role Variables
 
@@ -61,13 +61,11 @@ None.
 
     - hosts: search
       roles:
-        - geerlingguy.java
-        - geerlingguy.elasticsearch
+        - buluma.java
+        - buluma.elasticsearch
 
 ## License
 
 MIT / BSD
 
 ## Author Information
-
-This role was created in 2014 by [Jeff Geerling](https://www.jeffgeerling.com/), author of [Ansible for DevOps](https://www.ansiblefordevops.com/).
