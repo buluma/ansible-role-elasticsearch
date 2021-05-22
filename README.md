@@ -1,6 +1,6 @@
 # Ansible Role: Elasticsearch
 
-[![CI](https://github.com/buluma/ansible-role-elasticsearch/workflows/CI/badge.svg?event=push)](https://github.com/buluma/ansible-role-elasticsearch/actions?query=workflow%3ACI)
+[![CI](https://github.com/buluma/ansible-role-elasticsearch/workflows/CI/badge.svg?event=push)](https://github.com/buluma/ansible-role-elasticsearch/actions?query=workflow%3ACI) ![Ansible Role](https://img.shields.io/ansible/role/d/54859?color=blue)
 
 An Ansible Role that installs Elasticsearch on RedHat/CentOS or Debian/Ubuntu.
 
