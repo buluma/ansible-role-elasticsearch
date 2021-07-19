@@ -59,7 +59,7 @@ jobs:
           - centos7
           - centos8
 #           - rockylinux8
-          - ubuntu180
+          - ubuntu1804
           - ubuntu2004
 
     steps:
