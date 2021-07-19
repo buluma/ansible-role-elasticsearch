@@ -13,6 +13,7 @@ name: Release
       - master
   schedule:
     - cron: "30 4 * * 1"
+  workflow_dispatch:
 
 defaults:
   run:
