@@ -7,7 +7,10 @@ name: CI
       - master
   schedule:
     - cron: "30 4 * * 1"
-
+    
+  # Allows manual workflow run (must in default branch to work)
+  workflow_dispatch:
+  
 defaults:
   run:
     working-directory: 'buluma.elasticsearch'
