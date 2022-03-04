@@ -5,7 +5,7 @@ galaxy_info:
   role_name: elasticsearch
   author: buluma
   description: Elasticsearch for Linux.
-  company: "ShadowNet, LLC"
+  company: "ShadowNet"
   license: "license (BSD, MIT)"
   min_ansible_version: 2.4
   platforms:

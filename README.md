@@ -1,6 +1,6 @@
 # Ansible Role: Elasticsearch
 
-[![CI](https://github.com/buluma/ansible-role-elasticsearch/actions/workflows/ci.yml/badge.svg)](https://github.com/buluma/ansible-role-elasticsearch/actions/workflows/ci.yml) ![Ansible Role](https://img.shields.io/ansible/role/d/54859?color=blue)
+[![CI](https://github.com/buluma/ansible-role-elasticsearch/workflows/CI/badge.svg?event=push)](https://github.com/geerlingguy/ansible-role-elasticsearch/actions?query=workflow%3ACI)
 
 An Ansible Role that installs Elasticsearch on RedHat/CentOS or Debian/Ubuntu.
 
@@ -10,11 +10,15 @@ Requires at least Java 8. You can use the [`buluma.java`](https://github.com/bul
 
 ## Role Variables
 
-Available variables are listed below, along with default values (see `defaults/main.yml`):
+Available variables are listed below, along with default values (see `defaults/main.yml` for default role variables, `vars/RedHat.yml` and  `vars/Debian.yml` for distribution specific variables):
 
     elasticsearch_version: '7.x'
 
 The major version to use when installing Elasticsearch.
+
+    elasticsearch_package: elasticsearch
+
+If you want to follow the latest release in the `elasticsearch_version` major release cycle, keep the default here. Otherwise you can add `-7.13.2` (for RHEL-based systems) or `=7.13.2` (for Debian-based systems) to lock in a specific version, e.g. `7.13.2`.
 
     elasticsearch_package_state: present
 
@@ -67,5 +71,3 @@ None.
 ## License
 
 MIT / BSD
-
-## Author Information
