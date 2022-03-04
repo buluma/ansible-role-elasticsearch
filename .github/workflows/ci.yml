@@ -10,7 +10,11 @@ name: CI
     
   # Allows manual workflow run (must in default branch to work)
   workflow_dispatch:
-  
+
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: true
+
 defaults:
   run:
     working-directory: 'buluma.elasticsearch'
@@ -61,6 +65,7 @@ jobs:
 #           - rockylinux8
           - ubuntu1804
           - ubuntu2004
+          - ubuntu2104
 
     steps:
       - name: Check out the codebase.
