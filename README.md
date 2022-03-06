@@ -1,73 +1,112 @@
-# Ansible Role: Elasticsearch
+# [elasticsearch](#elasticsearch)
 
-[![CI](https://github.com/buluma/ansible-role-elasticsearch/workflows/CI/badge.svg?event=push)](https://github.com/geerlingguy/ansible-role-elasticsearch/actions?query=workflow%3ACI)
+Install and configure Elasticsearch on your system.
 
-An Ansible Role that installs Elasticsearch on RedHat/CentOS or Debian/Ubuntu.
+|GitHub|GitLab|Quality|Downloads|Version|
+|------|------|-------|---------|-------|
+|[![github](https://github.com/buluma/ansible-role-elasticsearch/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-elasticsearch/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-elasticsearch/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-elasticsearch)|[![quality](https://img.shields.io/ansible/quality/54859)](https://galaxy.ansible.com/buluma/elasticsearch)|[![downloads](https://img.shields.io/ansible/role/d/54859)](https://galaxy.ansible.com/buluma/elasticsearch)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-elasticsearch.svg)](https://github.com/buluma/ansible-role-elasticsearch/releases/)|
 
-## Requirements
+## [Example Playbook](#example-playbook)
 
-Requires at least Java 8. You can use the [`buluma.java`](https://github.com/buluma/ansible-role-java) to easilly install Java.
-
-## Role Variables
-
-Available variables are listed below, along with default values (see `defaults/main.yml` for default role variables, `vars/RedHat.yml` and  `vars/Debian.yml` for distribution specific variables):
-
-    elasticsearch_version: '7.x'
-
-The major version to use when installing Elasticsearch.
-
-    elasticsearch_package: elasticsearch
-
-If you want to follow the latest release in the `elasticsearch_version` major release cycle, keep the default here. Otherwise you can add `-7.13.2` (for RHEL-based systems) or `=7.13.2` (for Debian-based systems) to lock in a specific version, e.g. `7.13.2`.
-
-    elasticsearch_package_state: present
-
-The `elasticsearch` package state; set to `latest` to upgrade or change versions.
-
-    elasticsearch_service_state: started
-    elasticsearch_service_enabled: true
-
-Controls the Elasticsearch service options.
-
-    elasticsearch_network_host: localhost
-
-Network host to listen for incoming connections on. By default we only listen on the localhost interface. Change this to the IP address to listen on a specific interface, or `"0.0.0.0"` to listen on all interfaces.
-
-When listening on multiple interfaces, if you're setting up a single Elasticsearch server (not a cluster), you should also add `discovery.type: single-node` to `elasticsearch_extra_options`.
-
-    elasticsearch_http_port: 9200
-
-The port to listen for HTTP connections on.
-
-    elasticsearch_heap_size_min: 1g
-
-The minimum jvm heap size.
-
-    elasticsearch_heap_size_max: 2g
-
-The maximum jvm heap size.
-
-    elasticsearch_extra_options: ''
-
-A placeholder for arbitrary configuration options not exposed by the role. This will be appended as-is to the end of the `elasticsearch.yml` file, as long as your variable preserves formatting with a `|`. For example:
-
+This example is taken from `molecule/default/converge.yml` and is tested on each push, pull request and release.
 ```yaml
-elasticsearch_extra_options: |  # Dont forget the pipe!
-  some.option: true
-  another.option: false
+---
+- name: converge
+  hosts: all
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - role: buluma.elasticsearch
 ```
 
-## Dependencies
+The machine needs to be prepared. In CI this is done using `molecule/default/prepare.yml`:
+```yaml
+---
+- name: prepare
+  hosts: all
+  become: yes
+  gather_facts: no
 
-None.
+  roles:
+    - role: buluma.bootstrap
+    - role: buluma.core_dependencies
+    - role: robertdebock.elastic_repo
+```
 
-## Example Playbook
 
-    - hosts: search
-      roles:
-        - buluma.java
-        - buluma.elasticsearch
+## [Role Variables](#role-variables)
 
-## License
+The default values for the variables are set in `defaults/main.yml`:
+```yaml
+---
+# defaults file for elasticsearch
 
-MIT / BSD
+# Elastic offers both "oss" (Apache 2.0 license) and "elastic"
+# (Elastic license). Select the type here. Either "oss" or "elastic"
+elasticsearch_type: oss
+
+# The IP address to bind on.
+elasticsearch_network_host: "0.0.0.0"
+
+# The port to bind on.
+elasticsearch_http_port: 9200
+
+# Provides a list of the addresses of the master-eligible nodes in the cluster
+elasticsearch_discovery_seed_hosts: []
+
+# Sets the initial set of master-eligible nodes in a brand-new cluster.
+elasticsearch_cluster_initial_master_nodes: []
+```
+
+## [Requirements](#requirements)
+
+- pip packages listed in [requirements.txt](https://github.com/buluma/ansible-role-elasticsearch/blob/main/requirements.txt).
+
+## [Status of used roles](#status-of-requirements)
+
+The following roles are used to prepare a system. You can prepare your system in another way.
+
+| Requirement | GitHub | GitLab |
+|-------------|--------|--------|
+|[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Build Status GitHub](https://github.com/buluma/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-bootstrap/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-bootstrap)|
+|[buluma.core_dependencies](https://galaxy.ansible.com/buluma/core_dependencies)|[![Build Status GitHub](https://github.com/buluma/ansible-role-core_dependencies/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-core_dependencies/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-core_dependencies/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-core_dependencies)|
+|[robertdebock.elastic_repo](https://galaxy.ansible.com/buluma/robertdebock.elastic_repo)|[![Build Status GitHub](https://github.com/buluma/robertdebock.elastic_repo/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/robertdebock.elastic_repo/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/robertdebock.elastic_repo/badges/master/pipeline.svg)](https://gitlab.com/buluma/robertdebock.elastic_repo)|
+
+## [Context](#context)
+
+This role is a part of many compatible roles. Have a look at [the documentation of these roles](https://buluma.co.ke/) for further information.
+
+Here is an overview of related roles:
+
+![dependencies](https://raw.githubusercontent.com/buluma/ansible-role-elasticsearch/png/requirements.png "Dependencies")
+
+## [Compatibility](#compatibility)
+
+This role has been tested on these [container images](https://hub.docker.com/u/buluma):
+
+|container|tags|
+|---------|----|
+|amazon|all|
+|debian|all|
+|el|7, 8|
+|fedora|all|
+|ubuntu|focal, bionic|
+
+The minimum version of Ansible required is 2.10, tests have been done to:
+
+- The previous version.
+- The current version.
+- The development version.
+
+
+
+If you find issues, please register them in [GitHub](https://github.com/buluma/ansible-role-elasticsearch/issues)
+
+## [License](#license)
+
+Apache-2.0
+
+## [Author Information](#author-information)
+
+[Michael Buluma](https://buluma.github.io/)

@@ -1,14 +1,8 @@
 ---
-- name: Converge
+- name: converge
   hosts: all
-  become: true
-
-  pre_tasks:
-    - name: Update apt cache.
-      apt: update_cache=true cache_valid_time=600
-      when: ansible_os_family == 'Debian'
-      changed_when: false
+  become: yes
+  gather_facts: yes
 
   roles:
-    - role: buluma.java
-    - role: buluma.elasticsearch
+    - role: ansible-role-elasticsearch

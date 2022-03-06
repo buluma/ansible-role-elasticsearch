@@ -1,54 +1,28 @@
 ---
+# tasks file for elasticsearch
 
-- include_tasks: setup-RedHat.yml
-  when: ansible_os_family == 'RedHat'
+- name: include assert.yml
+  ansible.builtin.import_tasks: assert.yml
+  run_once: yes
+  delegate_to: localhost
 
-- include_tasks: setup-Debian.yml
-  when: ansible_os_family == 'Debian'
+- name: install elasticsearch
+  ansible.builtin.package:
+    name: "{{ elasticsearch_packages }}"
+    state: present
 
-- name: Install Elasticsearch.
-  package:
-    name: "{{ elasticsearch_package }}"
-    state: "{{ elasticsearch_package_state }}"
-
-- name: Configure Elasticsearch 6 or below.
-  template:
-    src: "{{ item | basename }}.j2"
-    dest: "{{ item }}"
+- name: configure elasticsearch
+  ansible.builtin.template:
+    src: elasticsearch.yml.j2
+    dest: /etc/elasticsearch/elasticsearch.yml
     owner: root
     group: elasticsearch
-    mode: 0660
-  with_items:
-    - /etc/elasticsearch/elasticsearch.yml
-    - /etc/elasticsearch/jvm.options
-  notify: restart elasticsearch
-  when: elasticsearch_version[0] | int < 7
+    mode: "0660"
+  notify:
+    - restart elasticsearch
 
-- name: Configure Elasticsearch 7+.
-  template:
-    src: "{{ item | basename }}.j2"
-    dest: "{{ item }}"
-    owner: root
-    group: elasticsearch
-    mode: 0660
-  with_items:
-    - /etc/elasticsearch/elasticsearch.yml
-    - /etc/elasticsearch/jvm.options.d/heap.options
-  notify: restart elasticsearch
-  when: elasticsearch_version[0] | int >= 7
-
-- name: Force a restart if configuration has changed.
-  meta: flush_handlers
-
-- name: Start Elasticsearch.
-  service:
+- name: start elasticsearch
+  ansible.builtin.service:
     name: elasticsearch
-    state: "{{ elasticsearch_service_state }}"
-    enabled: "{{ elasticsearch_service_enabled }}"
-
-- name: Make sure Elasticsearch is running before proceeding.
-  wait_for:
-    host: "{{ elasticsearch_network_host }}"
-    port: "{{ elasticsearch_http_port }}"
-    delay: 3
-    timeout: 300
+    state: started
+    enabled: yes

@@ -2,10 +2,15 @@
 extends: default
 
 rules:
-  line-length:
-    max: 180
-    level: warning
-  trailing-spaces: disable
+  braces:
+    max-spaces-inside: 1
+    level: error
+  brackets:
+    max-spaces-inside: 1
+    level: error
+  line-length: disable
+  truthy: disable
 
 ignore: |
-  .github/stale.yml
+  .tox/
+  .cache/

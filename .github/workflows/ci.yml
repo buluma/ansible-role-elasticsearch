@@ -7,7 +7,7 @@ name: CI
       - master
   schedule:
     - cron: "30 4 * * 1"
-    
+
   # Allows manual workflow run (must in default branch to work)
   workflow_dispatch:
 
@@ -58,11 +58,11 @@ jobs:
     strategy:
       matrix:
         distro:
-#           - centos7
-#           - ubuntu1804
+          # - centos7
+          # - ubuntu1804
           - centos7
           - centos8
-#           - rockylinux8
+          # - rockylinux8
           - ubuntu1804
           - ubuntu2004
           - ubuntu2104
