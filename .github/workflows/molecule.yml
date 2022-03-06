@@ -51,8 +51,6 @@ jobs:
           - image: "fedora-systemd"
             tag: "34"
           - image: "fedora-systemd"
-            tag: "latest"
-          - image: "fedora-systemd"
             tag: "rawhide"
           - image: "docker-ubuntu-systemd"
             tag: "focal"
