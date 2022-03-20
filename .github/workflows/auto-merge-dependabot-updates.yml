@@ -1,4 +1,8 @@
 ---
+#
+# Ansible managed
+#
+
 name: Auto Merge Dependency Updates
 
 on:
