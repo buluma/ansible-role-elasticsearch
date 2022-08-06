@@ -2,4 +2,4 @@
 roles:
   - name: buluma.bootstrap
   - name: buluma.core_dependencies
-  - name: robertdebock.elastic_repo
+  - name: buluma.elastic_repo

@@ -1,8 +1,7 @@
 ---
 galaxy_info:
-  author: Michael Buluma
+  author: buluma
   role_name: elasticsearch
-  namespace: buluma
   description: Install and configure Elasticsearch on your system.
   license: Apache-2.0
   company: ShadowNet
@@ -17,8 +16,8 @@ galaxy_info:
         - all
     - name: EL
       versions:
-        - 7
-        - 8
+        - "7"
+        - "8"
     - name: Fedora
       versions:
         - all
