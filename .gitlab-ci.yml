@@ -1,5 +1,5 @@
 ---
-image: "buluma/github-action-molecule:4.0.9"
+image: "buluma/github-action-molecule:5.0.0"
 
 services:
   - docker:dind
@@ -34,9 +34,9 @@ molecule:
       - image: "fedora-systemd"
         tag: "35"
       - image: "fedora-systemd"
-        tag: "latest"
+        tag: "34"
       - image: "fedora-systemd"
-        tag: "rawhide"
+        tag: "latest"
       - image: "docker-ubuntu-systemd"
         tag: "focal"
       - image: "docker-ubuntu-systemd"
@@ -68,9 +68,9 @@ testing:
       - image: "fedora-systemd"
         tag: "35"
       - image: "fedora-systemd"
-        tag: "latest"
+        tag: "34"
       - image: "fedora-systemd"
-        tag: "rawhide"
+        tag: "latest"
       - image: "docker-ubuntu-systemd"
         tag: "focal"
       - image: "docker-ubuntu-systemd"
