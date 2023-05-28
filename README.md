@@ -4,11 +4,12 @@ Install and configure Elasticsearch on your system.
 
 |GitHub|GitLab|Quality|Downloads|Version|Issues|Pull Requests|
 |------|------|-------|---------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-elasticsearch/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-elasticsearch/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-elasticsearch/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-elasticsearch)|[![quality](https://img.shields.io/ansible/quality/54859)](https://galaxy.ansible.com/buluma/elasticsearch)|[![downloads](https://img.shields.io/ansible/role/d/54859)](https://galaxy.ansible.com/buluma/elasticsearch)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-elasticsearch.svg)](https://github.com/buluma/ansible-role-elasticsearch/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-elasticsearch.svg)](https://github.com/buluma/ansible-role-elasticsearch/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-elasticsearch.svg)](https://github.com/buluma/ansible-role-elasticsearch/pulls/)|
+|[![github](https://github.com/buluma/ansible-role-elasticsearch/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-elasticsearch/actions)|[![gitlab](https://gitlab.com/shadowwalker/ansible-role-elasticsearch/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-elasticsearch)|[![quality](https://img.shields.io/ansible/quality/54859)](https://galaxy.ansible.com/buluma/elasticsearch)|[![downloads](https://img.shields.io/ansible/role/d/54859)](https://galaxy.ansible.com/buluma/elasticsearch)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-elasticsearch.svg)](https://github.com/buluma/ansible-role-elasticsearch/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-elasticsearch.svg)](https://github.com/buluma/ansible-role-elasticsearch/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-elasticsearch.svg)](https://github.com/buluma/ansible-role-elasticsearch/pulls/)|
 
 ## [Example Playbook](#example-playbook)
 
-This example is taken from `molecule/default/converge.yml` and is tested on each push, pull request and release.
+This example is taken from [`molecule/default/converge.yml`](https://github.com/buluma/ansible-role-elasticsearch/blob/master/molecule/default/converge.yml) and is tested on each push, pull request and release.
+
 ```yaml
 ---
 - name: converge
@@ -20,7 +21,8 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
     - role: buluma.elasticsearch
 ```
 
-The machine needs to be prepared. In CI this is done using `molecule/default/prepare.yml`:
+The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-elasticsearch/blob/master/molecule/default/prepare.yml):
+
 ```yaml
 ---
 - name: prepare
@@ -34,10 +36,12 @@ The machine needs to be prepared. In CI this is done using `molecule/default/pre
     - role: buluma.elastic_repo
 ```
 
+Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
 
 ## [Role Variables](#role-variables)
 
-The default values for the variables are set in `defaults/main.yml`:
+The default values for the variables are set in [`defaults/main.yml`](https://github.com/buluma/ansible-role-elasticsearch/blob/master/defaults/main.yml):
+
 ```yaml
 ---
 # defaults file for elasticsearch
@@ -61,17 +65,17 @@ elasticsearch_cluster_initial_master_nodes: []
 
 ## [Requirements](#requirements)
 
-- pip packages listed in [requirements.txt](https://github.com/buluma/ansible-role-elasticsearch/blob/main/requirements.txt).
+- pip packages listed in [requirements.txt](https://github.com/buluma/ansible-role-elasticsearch/blob/master/requirements.txt).
 
-## [Status of used roles](#status-of-requirements)
+## [State of used roles](#state-of-used-roles)
 
 The following roles are used to prepare a system. You can prepare your system in another way.
 
 | Requirement | GitHub | GitLab |
 |-------------|--------|--------|
-|[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Build Status GitHub](https://github.com/buluma/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-bootstrap/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-bootstrap)|
-|[buluma.core_dependencies](https://galaxy.ansible.com/buluma/core_dependencies)|[![Build Status GitHub](https://github.com/buluma/ansible-role-core_dependencies/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-core_dependencies/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-core_dependencies/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-core_dependencies)|
-|[buluma.elastic_repo](https://galaxy.ansible.com/buluma/elastic_repo)|[![Build Status GitHub](https://github.com/buluma/ansible-role-elastic_repo/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-elastic_repo/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-elastic_repo/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-elastic_repo)|
+|[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Build Status GitHub](https://github.com/buluma/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions)|[![Build Status GitLab](https://gitlab.com/shadowwalker/ansible-role-bootstrap/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-bootstrap)|
+|[buluma.core_dependencies](https://galaxy.ansible.com/buluma/core_dependencies)|[![Build Status GitHub](https://github.com/buluma/ansible-role-core_dependencies/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-core_dependencies/actions)|[![Build Status GitLab](https://gitlab.com/shadowwalker/ansible-role-core_dependencies/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-core_dependencies)|
+|[buluma.elastic_repo](https://galaxy.ansible.com/buluma/elastic_repo)|[![Build Status GitHub](https://github.com/buluma/ansible-role-elastic_repo/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-elastic_repo/actions)|[![Build Status GitLab](https://gitlab.com/shadowwalker/ansible-role-elastic_repo/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-elastic_repo)|
 
 ## [Context](#context)
 
@@ -87,19 +91,17 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 
 |container|tags|
 |---------|----|
-|amazon|all|
-|debian|all|
-|el|7, 8|
-|fedora|all|
-|ubuntu|focal, bionic|
+|[Amazon](https://hub.docker.com/repository/docker/buluma/amazonlinux/general)|all|
+|[Debian](https://hub.docker.com/repository/docker/buluma/debian/general)|all|
+|[EL](https://hub.docker.com/repository/docker/buluma/enterpriselinux/general)|7, 8|
+|[Fedora](https://hub.docker.com/repository/docker/buluma/fedora/general)|all|
+|[Ubuntu](https://hub.docker.com/repository/docker/buluma/ubuntu/general)|focal, bionic|
 
 The minimum version of Ansible required is 2.10, tests have been done to:
 
 - The previous version.
 - The current version.
 - The development version.
-
-
 
 If you find issues, please register them in [GitHub](https://github.com/buluma/ansible-role-elasticsearch/issues)
 
@@ -109,8 +111,14 @@ If you find issues, please register them in [GitHub](https://github.com/buluma/a
 
 ## [License](#license)
 
-Apache-2.0
+[Apache-2.0](https://github.com/buluma/ansible-role-elasticsearch/blob/master/LICENSE).
 
 ## [Author Information](#author-information)
 
 [buluma](https://buluma.github.io/)
+
+Please consider [sponsoring me](https://github.com/sponsors/buluma).
+
+### [Special Thanks](#special-thanks)
+
+Template inspired by [Robert de Bock](https://github.com/robertdebock)
