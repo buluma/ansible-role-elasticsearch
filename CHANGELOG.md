@@ -16,7 +16,6 @@
 
 - Bump buluma/gh-action-auto-merge-dependabot-updates from 1.0.3 to 1.0.4 [\#20](https://github.com/buluma/ansible-role-elasticsearch/pull/20) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump buluma/gh-action-auto-merge-dependabot-updates from 1.0.1 to 1.0.3 [\#19](https://github.com/buluma/ansible-role-elasticsearch/pull/19) ([dependabot[bot]](https://github.com/apps/dependabot))
-- Main [\#4](https://github.com/buluma/ansible-role-elasticsearch/pull/4) ([buluma](https://github.com/buluma))
 
 ## [1.0.2](https://github.com/buluma/ansible-role-elasticsearch/tree/1.0.2) (2022-03-06)
 
@@ -45,6 +44,7 @@
 
 - Bump actions/checkout from 2 to 3 [\#16](https://github.com/buluma/ansible-role-elasticsearch/pull/16) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump actions/setup-python from 2 to 3 [\#15](https://github.com/buluma/ansible-role-elasticsearch/pull/15) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Main [\#4](https://github.com/buluma/ansible-role-elasticsearch/pull/4) ([buluma](https://github.com/buluma))
 - Lint fix [\#1](https://github.com/buluma/ansible-role-elasticsearch/pull/1) ([buluma](https://github.com/buluma))
 
 ## [1.0.0](https://github.com/buluma/ansible-role-elasticsearch/tree/1.0.0) (2021-05-09)
