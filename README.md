@@ -2,9 +2,9 @@
 
 Install and configure Elasticsearch on your system.
 
-|GitHub|GitLab|Quality|Downloads|Version|Issues|Pull Requests|
-|------|------|-------|---------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-elasticsearch/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-elasticsearch/actions)|[![gitlab](https://gitlab.com/shadowwalker/ansible-role-elasticsearch/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-elasticsearch)|[![quality](https://img.shields.io/ansible/quality/54859)](https://galaxy.ansible.com/buluma/elasticsearch)|[![downloads](https://img.shields.io/ansible/role/d/54859)](https://galaxy.ansible.com/buluma/elasticsearch)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-elasticsearch.svg)](https://github.com/buluma/ansible-role-elasticsearch/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-elasticsearch.svg)](https://github.com/buluma/ansible-role-elasticsearch/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-elasticsearch.svg)](https://github.com/buluma/ansible-role-elasticsearch/pulls/)|
+|GitHub|GitLab|Downloads|Version|Issues|Pull Requests|
+|------|------|-------|-------|------|-------------|
+|[![github](https://github.com/buluma/ansible-role-elasticsearch/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-elasticsearch/actions)|[![gitlab](https://gitlab.com/shadowwalker/ansible-role-elasticsearch/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-elasticsearch)|[![downloads](https://img.shields.io/ansible/role/d/4696)](https://galaxy.ansible.com/buluma/elasticsearch)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-elasticsearch.svg)](https://github.com/buluma/ansible-role-elasticsearch/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-elasticsearch.svg)](https://github.com/buluma/ansible-role-elasticsearch/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-elasticsearch.svg)](https://github.com/buluma/ansible-role-elasticsearch/pulls/)|
 
 ## [Example Playbook](#example-playbook)
 
