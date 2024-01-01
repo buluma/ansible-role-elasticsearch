@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/buluma/ansible-role-elasticsearch/tree/HEAD)
+## [1.0.6](https://github.com/buluma/ansible-role-elasticsearch/tree/1.0.6) (2023-12-28)
 
-[Full Changelog](https://github.com/buluma/ansible-role-elasticsearch/compare/1.0.5...HEAD)
+[Full Changelog](https://github.com/buluma/ansible-role-elasticsearch/compare/1.0.5...1.0.6)
 
 **Closed issues:**
 
