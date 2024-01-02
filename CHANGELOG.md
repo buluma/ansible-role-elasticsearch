@@ -1,5 +1,14 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-elasticsearch/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-elasticsearch/compare/1.0.6...HEAD)
+
+**Merged pull requests:**
+
+- Bump actions/setup-python from 3 to 5 [\#36](https://github.com/buluma/ansible-role-elasticsearch/pull/36) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump actions/checkout from 3 to 4 [\#34](https://github.com/buluma/ansible-role-elasticsearch/pull/34) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [1.0.6](https://github.com/buluma/ansible-role-elasticsearch/tree/1.0.6) (2023-12-28)
 
 [Full Changelog](https://github.com/buluma/ansible-role-elasticsearch/compare/1.0.5...1.0.6)
