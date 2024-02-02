@@ -1,11 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/buluma/ansible-role-elasticsearch/tree/HEAD)
+## [1.2.0](https://github.com/buluma/ansible-role-elasticsearch/tree/1.2.0) (2024-01-20)
 
-[Full Changelog](https://github.com/buluma/ansible-role-elasticsearch/compare/1.1.0...HEAD)
+[Full Changelog](https://github.com/buluma/ansible-role-elasticsearch/compare/1.1.0...1.2.0)
 
 **Merged pull requests:**
 
+- Bump buluma/molecule-action from 6.0.1 to 6.0.3 [\#41](https://github.com/buluma/ansible-role-elasticsearch/pull/41) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump buluma/molecule-action from 6.0.0 to 6.0.1 [\#40](https://github.com/buluma/ansible-role-elasticsearch/pull/40) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [1.1.0](https://github.com/buluma/ansible-role-elasticsearch/tree/1.1.0) (2024-01-02)
