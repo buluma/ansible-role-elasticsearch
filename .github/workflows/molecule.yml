@@ -12,7 +12,7 @@ on:
       - main
       - testing
       - dependabot/**
-      - renovate/**
+      # - renovate/**
     paths-ignore:
       - '**/README.md'
       - '**/CHANGELOG.md'
@@ -27,7 +27,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-permissions: write-all
+permissions: read-all|write-all
 
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
