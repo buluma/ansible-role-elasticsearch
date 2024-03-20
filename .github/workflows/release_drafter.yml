@@ -23,7 +23,7 @@ on:
     types: [opened, reopened, synchronize]
   pull_request_target:
 
-permissions: read-all|write-all
+permissions: write-all
 
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
