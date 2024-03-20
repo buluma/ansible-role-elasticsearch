@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Bump buluma/dependabot-auto-merge-action from 2.1.1 to 2.1.2 [\#44](https://github.com/buluma/ansible-role-elasticsearch/pull/44) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump release-drafter/release-drafter from 5 to 6 [\#42](https://github.com/buluma/ansible-role-elasticsearch/pull/42) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [1.2.0](https://github.com/buluma/ansible-role-elasticsearch/tree/1.2.0) (2024-01-20)
