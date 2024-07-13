@@ -1,8 +1,8 @@
 ---
 - name: Verify
   hosts: all
-  become: yes
-  gather_facts: no
+  become: true
+  gather_facts: false
 
   tasks:
     - name: Check ports
@@ -15,7 +15,7 @@
     - name: Check api
       ansible.builtin.uri:
         url: "http://localhost:9200/"
-        return_content: yes
+        return_content: true
       register: elasticsearch_test_one
       failed_when:
         - "'You Know, for Search' not in elasticsearch_test_one.content"

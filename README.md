@@ -14,8 +14,8 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 ---
 - name: Converge
   hosts: all
-  become: yes
-  gather_facts: yes
+  become: true
+  gather_facts: true
 
   roles:
     - role: buluma.elasticsearch
@@ -27,8 +27,8 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
 ---
 - name: Prepare
   hosts: all
-  become: yes
-  gather_facts: no
+  become: true
+  gather_facts: false
 
   roles:
     - role: buluma.bootstrap
@@ -93,9 +93,9 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 |---------|----|
 |[Amazon](https://hub.docker.com/r/buluma/amazonlinux)|all|
 |[Debian](https://hub.docker.com/r/buluma/debian)|all|
-|[EL](https://hub.docker.com/r/buluma/enterpriselinux)|7, 8|
+|[EL](https://hub.docker.com/r/buluma/enterpriselinux)|7, 8, 9|
 |[Fedora](https://hub.docker.com/r/buluma/fedora)|all|
-|[Ubuntu](https://hub.docker.com/r/buluma/ubuntu)|focal, bionic|
+|[Ubuntu](https://hub.docker.com/r/buluma/ubuntu)|focal, bionic, jammy, lunar, noble|
 
 The minimum version of Ansible required is 2.12, tests have been done to:
 
