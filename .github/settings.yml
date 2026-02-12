@@ -5,4 +5,4 @@
 repository:
   description: Install and configure Elasticsearch on your system.
   homepage: https://buluma.github.io/
-  topics: elasticsearch, ansible, molecule, tox, playbook
+  topics: elasticsearch, ansible, molecule, playbook
