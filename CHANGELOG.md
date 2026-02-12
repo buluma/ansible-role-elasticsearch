@@ -18,6 +18,7 @@
 
 - Bump buluma/molecule-action from 6.0.1 to 6.0.3 [\#41](https://github.com/buluma/ansible-role-elasticsearch/pull/41) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump buluma/molecule-action from 6.0.0 to 6.0.1 [\#40](https://github.com/buluma/ansible-role-elasticsearch/pull/40) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump actions/setup-python from 2 to 3 [\#15](https://github.com/buluma/ansible-role-elasticsearch/pull/15) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [1.1.0](https://github.com/buluma/ansible-role-elasticsearch/tree/1.1.0) (2024-01-02)
 
@@ -90,7 +91,6 @@
 **Merged pull requests:**
 
 - Bump actions/checkout from 2 to 3 [\#16](https://github.com/buluma/ansible-role-elasticsearch/pull/16) ([dependabot[bot]](https://github.com/apps/dependabot))
-- Bump actions/setup-python from 2 to 3 [\#15](https://github.com/buluma/ansible-role-elasticsearch/pull/15) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Main [\#4](https://github.com/buluma/ansible-role-elasticsearch/pull/4) ([buluma](https://github.com/buluma))
 - Lint fix [\#1](https://github.com/buluma/ansible-role-elasticsearch/pull/1) ([buluma](https://github.com/buluma))
 
