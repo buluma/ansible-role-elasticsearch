@@ -58,7 +58,6 @@ elasticsearch_http_port: 9200
 
 # Provides a list of the addresses of the master-eligible nodes in the cluster
 elasticsearch_discovery_seed_hosts: []
-
 # Sets the initial set of master-eligible nodes in a brand-new cluster.
 elasticsearch_cluster_initial_master_nodes: []
 ```
