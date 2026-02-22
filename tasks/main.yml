@@ -1,28 +1,23 @@
 ---
-# tasks file for elasticsearch
-
 - name: Include assert.yml
   ansible.builtin.import_tasks: assert.yml
-  run_once: true
   delegate_to: localhost
-
+  run_once: true
 - name: Install elasticsearch
   ansible.builtin.package:
     name: "{{ elasticsearch_packages }}"
     state: present
-
 - name: Configure elasticsearch
   ansible.builtin.template:
-    src: elasticsearch.yml.j2
     dest: /etc/elasticsearch/elasticsearch.yml
-    owner: root
     group: elasticsearch
     mode: "0660"
+    owner: root
+    src: elasticsearch.yml.j2
   notify:
     - Restart elasticsearch
-
 - name: Start elasticsearch
   ansible.builtin.service:
+    enabled: true
     name: elasticsearch
     state: started
-    enabled: true

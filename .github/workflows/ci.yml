@@ -1,99 +1,80 @@
----
-name: CI
-'on':
-  pull_request:
-  push:
-    branches:
-      - master
-  schedule:
-    - cron: "30 4 * * 1"
-
-  # Allows manual workflow run (must in default branch to work)
-  workflow_dispatch:
-
 concurrency:
-  group: ${{ github.ref }}-${{ github.workflow }}
   cancel-in-progress: true
-
+  group: ${{ github.ref }}-${{ github.workflow }}
 defaults:
   run:
-    working-directory: 'buluma.elasticsearch'
-
+    working-directory: buluma.elasticsearch
 jobs:
-
   lint:
     name: Lint
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the codebase.
-        uses: actions/checkout@v4
-        with:
-          path: 'buluma.elasticsearch'
+    - name: Check out the codebase.
+      uses: actions/checkout@v4
+      with:
+        path: buluma.elasticsearch
+    - name: Set up Python 3.
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.x
+    - name: Install test dependencies.
+      run: pip3 install yamllint
+    - name: Lint code.
+      run: 'yamllint .
 
-      - name: Set up Python 3.
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-
-      - name: Install test dependencies.
-        run: pip3 install yamllint
-
-      - name: Lint code.
-        run: |
-          yamllint .
-
-      - name: Create Issue on Lint failure.
-        if: failure()
-        uses: buluma/create-issue-action@v2.0.0
-        with:
-          title: Lint Test Failed
-          token: ${{secrets.GITHUB_TOKEN}}
-          assignees: ${{github.actor}}
-          labels: bug
-          body: Lint test failed for commit ${{github.sha}}
-
+        '
+    - if: failure()
+      name: Create Issue on Lint failure.
+      uses: buluma/create-issue-action@v2.0.0
+      with:
+        assignees: ${{github.actor}}
+        body: Lint test failed for commit ${{github.sha}}
+        labels: bug
+        title: Lint Test Failed
+        token: ${{secrets.GITHUB_TOKEN}}
   molecule:
     name: Molecule
     runs-on: ubuntu-latest
+    steps:
+    - name: Check out the codebase.
+      uses: actions/checkout@v4
+      with:
+        path: buluma.elasticsearch
+    - name: Set up Python 3.
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.x
+    - name: Install test dependencies.
+      run: pip3 install ansible molecule[docker] docker
+    - env:
+        ANSIBLE_FORCE_COLOR: '1'
+        MOLECULE_DISTRO: ${{ matrix.distro }}
+        PY_COLORS: '1'
+      name: Run Molecule tests.
+      run: molecule test
+    - if: failure()
+      name: Create Issue on Molecule failure.
+      uses: buluma/create-issue-action@v2.0.0
+      with:
+        assignees: ${{github.actor}}
+        body: Molecule test failed for commit ${{github.sha}}
+        labels: bug
+        title: Molecule Test Failed
+        token: ${{secrets.GITHUB_TOKEN}}
     strategy:
       matrix:
         distro:
-          # - centos7
-          # - ubuntu1804
-          - centos7
-          - centos8
-          # - rockylinux8
-          - ubuntu1804
-          - ubuntu2004
-          - ubuntu2104
-
-    steps:
-      - name: Check out the codebase.
-        uses: actions/checkout@v4
-        with:
-          path: 'buluma.elasticsearch'
-
-      - name: Set up Python 3.
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-
-      - name: Install test dependencies.
-        run: pip3 install ansible molecule[docker] docker
-
-      - name: Run Molecule tests.
-        run: molecule test
-        env:
-          PY_COLORS: '1'
-          ANSIBLE_FORCE_COLOR: '1'
-          MOLECULE_DISTRO: ${{ matrix.distro }}
-
-      - name: Create Issue on Molecule failure.
-        if: failure()
-        uses: buluma/create-issue-action@v2.0.0
-        with:
-          title: Molecule Test Failed
-          token: ${{secrets.GITHUB_TOKEN}}
-          assignees: ${{github.actor}}
-          labels: bug
-          body: Molecule test failed for commit ${{github.sha}}
+        - centos7
+        - centos8
+        - ubuntu1804
+        - ubuntu2004
+        - ubuntu2104
+name: CI
+'on':
+  pull_request: null
+  push:
+    branches:
+    - master
+  schedule:
+  - cron: 30 4 * * 1
+  workflow_dispatch: null
