@@ -1,9 +1,9 @@
 ---
-  - become: true
-    gather_facts: false
-    hosts: all
-    name: Prepare
-    roles:
-      - role: buluma.bootstrap
-      - role: buluma.core_dependencies
-      - role: buluma.elastic_repo
+- become: true
+  gather_facts: false
+  hosts: all
+  name: Prepare
+  roles:
+  - role: buluma.bootstrap
+  - role: buluma.core_dependencies
+  - role: buluma.elastic_repo

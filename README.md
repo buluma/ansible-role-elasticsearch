@@ -12,26 +12,26 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 
 ```yaml
 ---
-  - become: true
-    gather_facts: true
-    hosts: all
-    name: Converge
-    roles:
-      - role: buluma.elasticsearch
+- become: true
+  gather_facts: true
+  hosts: all
+  name: Converge
+  roles:
+  - role: buluma.elasticsearch
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-elasticsearch/blob/master/molecule/default/prepare.yml):
 
 ```yaml
 ---
-  - become: true
-    gather_facts: false
-    hosts: all
-    name: Prepare
-    roles:
-      - role: buluma.bootstrap
-      - role: buluma.core_dependencies
-      - role: buluma.elastic_repo
+- become: true
+  gather_facts: false
+  hosts: all
+  name: Prepare
+  roles:
+  - role: buluma.bootstrap
+  - role: buluma.core_dependencies
+  - role: buluma.elastic_repo
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
