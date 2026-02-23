@@ -1,18 +1,19 @@
-- become: true
-  gather_facts: false
-  hosts: all
-  name: Verify
-  tasks:
-  - ansible.builtin.wait_for:
-      port: '{{ item }}'
-    loop:
-    - 9200
-    - 9300
-    name: Check ports
-  - ansible.builtin.uri:
-      return_content: true
-      url: http://localhost:9200/
-    failed_when:
-    - '''You Know, for Search'' not in elasticsearch_test_one.content'
-    name: Check api
-    register: elasticsearch_test_one
+---
+  - become: true
+    gather_facts: false
+    hosts: all
+    name: Verify
+    tasks:
+      - ansible.builtin.wait_for:
+          port: '{{ item }}'
+        loop:
+          - 9200
+          - 9300
+        name: Check ports
+      - ansible.builtin.uri:
+          return_content: true
+          url: http://localhost:9200/
+        failed_when:
+          - '''You Know, for Search'' not in elasticsearch_test_one.content'
+        name: Check api
+        register: elasticsearch_test_one
