@@ -14,8 +14,8 @@
     mode: "0660"
     owner: root
     src: elasticsearch.yml.j2
-  notify:
-    - Restart elasticsearch
+  notify: Restart elasticsearch
+
 - name: Start elasticsearch
   ansible.builtin.service:
     enabled: true
