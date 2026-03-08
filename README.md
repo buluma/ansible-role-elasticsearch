@@ -45,7 +45,7 @@ The default values for the variables are set in [`defaults/main.yml`](https://gi
 elasticsearch_cluster_initial_master_nodes: []
 elasticsearch_discovery_seed_hosts: []
 elasticsearch_http_port: 9200
-elasticsearch_network_host: 0.0.0.0
+elasticsearch_network_host: "0.0.0.0"
 elasticsearch_type: oss
 ```
 
@@ -98,3 +98,4 @@ If you find issues, please register them on [GitHub](https://github.com/buluma/a
 ## [Author Information](#author-information)
 
 [buluma](https://buluma.github.io/)
+
