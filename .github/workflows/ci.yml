@@ -10,72 +10,72 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     steps:
-    - name: Check out the codebase.
-      uses: actions/checkout@v6
-      with:
-        path: buluma.elasticsearch
-    - name: Set up Python 3.
-      uses: actions/setup-python@v6
-      with:
-        python-version: 3.x
-    - name: Install test dependencies.
-      run: pip3 install yamllint
-    - name: Lint code.
-      run: 'yamllint .
+      - name: Check out the codebase.
+        uses: actions/checkout@v6
+        with:
+          path: buluma.elasticsearch
+      - name: Set up Python 3.
+        uses: actions/setup-python@v6
+        with:
+          python-version: 3.x
+      - name: Install test dependencies.
+        run: pip3 install yamllint
+      - name: Lint code.
+        run: "yamllint .
 
-        '
-    - if: failure()
-      name: Create Issue on Lint failure.
-      uses: buluma/create-issue-action@v2.0.0
-      with:
-        assignees: ${{github.actor}}
-        body: Lint test failed for commit ${{github.sha}}
-        labels: bug
-        title: Lint Test Failed
-        token: ${{secrets.GITHUB_TOKEN}}
+          "
+      - if: failure()
+        name: Create Issue on Lint failure.
+        uses: buluma/create-issue-action@v2.0.0
+        with:
+          assignees: ${{github.actor}}
+          body: Lint test failed for commit ${{github.sha}}
+          labels: bug
+          title: Lint Test Failed
+          token: ${{secrets.GITHUB_TOKEN}}
   molecule:
     name: Molecule
     runs-on: ubuntu-latest
     steps:
-    - name: Check out the codebase.
-      uses: actions/checkout@v6
-      with:
-        path: buluma.elasticsearch
-    - name: Set up Python 3.
-      uses: actions/setup-python@v6
-      with:
-        python-version: 3.x
-    - name: Install test dependencies.
-      run: pip3 install ansible molecule[docker] docker
-    - env:
-        ANSIBLE_FORCE_COLOR: '1'
-        MOLECULE_DISTRO: ${{ matrix.distro }}
-        PY_COLORS: '1'
-      name: Run Molecule tests.
-      run: molecule test
-    - if: failure()
-      name: Create Issue on Molecule failure.
-      uses: buluma/create-issue-action@v2.0.0
-      with:
-        assignees: ${{github.actor}}
-        body: Molecule test failed for commit ${{github.sha}}
-        labels: bug
-        title: Molecule Test Failed
-        token: ${{secrets.GITHUB_TOKEN}}
+      - name: Check out the codebase.
+        uses: actions/checkout@v6
+        with:
+          path: buluma.elasticsearch
+      - name: Set up Python 3.
+        uses: actions/setup-python@v6
+        with:
+          python-version: 3.x
+      - name: Install test dependencies.
+        run: pip3 install ansible molecule[docker] docker
+      - env:
+          ANSIBLE_FORCE_COLOR: "1"
+          MOLECULE_DISTRO: ${{ matrix.distro }}
+          PY_COLORS: "1"
+        name: Run Molecule tests.
+        run: molecule test
+      - if: failure()
+        name: Create Issue on Molecule failure.
+        uses: buluma/create-issue-action@v2.0.0
+        with:
+          assignees: ${{github.actor}}
+          body: Molecule test failed for commit ${{github.sha}}
+          labels: bug
+          title: Molecule Test Failed
+          token: ${{secrets.GITHUB_TOKEN}}
     strategy:
       matrix:
         distro:
-        - centos7
-        - centos8
-        - ubuntu1804
-        - ubuntu2004
-        - ubuntu2104
+          - centos7
+          - centos8
+          - ubuntu1804
+          - ubuntu2004
+          - ubuntu2104
 name: CI
-'on':
+"on":
   pull_request:
   push:
     branches:
-    - master
+      - master
   schedule:
-  - cron: 30 4 * * 1
+    - cron: 30 4 * * 1
   workflow_dispatch:
