@@ -1,6 +1,5 @@
 ---
-- become: true
-  gather_facts: false
+- gather_facts: false
   hosts: all
   name: Prepare
   roles:
