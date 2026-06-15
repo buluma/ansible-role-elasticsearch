@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-elasticsearch/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-elasticsearch/compare/26.6.0...HEAD)
+
+**Fixed bugs:**
+
+- Elasticsearch fail to start when tmp has noexec [\#25](https://github.com/buluma/ansible-role-elasticsearch/issues/25)
+
 ## [26.6.0](https://github.com/buluma/ansible-role-elasticsearch/tree/26.6.0) (2026-06-14)
 
 [Full Changelog](https://github.com/buluma/ansible-role-elasticsearch/compare/1.2.0...26.6.0)
