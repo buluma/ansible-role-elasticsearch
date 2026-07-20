@@ -21,6 +21,7 @@
 - Bump buluma/dependabot-auto-merge-action from 2.1.2 to 2.1.3 [\#46](https://github.com/buluma/ansible-role-elasticsearch/pull/46) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump buluma/dependabot-auto-merge-action from 2.1.1 to 2.1.2 [\#44](https://github.com/buluma/ansible-role-elasticsearch/pull/44) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump release-drafter/release-drafter from 5 to 6 [\#42](https://github.com/buluma/ansible-role-elasticsearch/pull/42) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump buluma/molecule-action from 6.0.1 to 6.0.3 [\#41](https://github.com/buluma/ansible-role-elasticsearch/pull/41) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [1.2.0](https://github.com/buluma/ansible-role-elasticsearch/tree/1.2.0) (2024-01-20)
 
@@ -28,7 +29,6 @@
 
 **Merged pull requests:**
 
-- Bump buluma/molecule-action from 6.0.1 to 6.0.3 [\#41](https://github.com/buluma/ansible-role-elasticsearch/pull/41) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump buluma/molecule-action from 6.0.0 to 6.0.1 [\#40](https://github.com/buluma/ansible-role-elasticsearch/pull/40) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [1.1.0](https://github.com/buluma/ansible-role-elasticsearch/tree/1.1.0) (2024-01-02)
