@@ -9,12 +9,9 @@ platforms:
   - name: Debian
     versions:
       - all
-  - name: Fedora
-    versions:
-      # Excludes 45: it ships Python 3.15.0b3, whose dataclasses module
-      # dropped _is_type, breaking ansible-core's AnsiballZ module wrapper.
-      - "44"
-      - "43"
+  # Fedora excluded: buluma.elastic_repo deliberately skips Fedora when
+  # setting up Elastic's yum repo (Elastic doesn't officially support it),
+  # so there's no repo backing elasticsearch-oss there.
   - name: Ubuntu
     versions:
       - all
