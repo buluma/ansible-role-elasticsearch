@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-elasticsearch/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-elasticsearch/compare/26.6.2...HEAD)
+
+**Merged pull requests:**
+
+- Bump ansible/ansible-lint from 26.4.0 to 26.6.0 [\#56](https://github.com/buluma/ansible-role-elasticsearch/pull/56) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [26.6.2](https://github.com/buluma/ansible-role-elasticsearch/tree/26.6.2) (2026-07-23)
 
 [Full Changelog](https://github.com/buluma/ansible-role-elasticsearch/compare/26.6.1...26.6.2)
