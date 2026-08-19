@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Bump ansible/ansible-lint from 26.6.0 to 26.8.0 [\#58](https://github.com/buluma/ansible-role-elasticsearch/pull/58) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump ansible/ansible-lint from 26.4.0 to 26.6.0 [\#56](https://github.com/buluma/ansible-role-elasticsearch/pull/56) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [26.6.2](https://github.com/buluma/ansible-role-elasticsearch/tree/26.6.2) (2026-07-23)
@@ -31,6 +32,7 @@
 - Bump actions/setup-python from 5 to 6 [\#49](https://github.com/buluma/ansible-role-elasticsearch/pull/49) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump actions/checkout from 4 to 6 [\#48](https://github.com/buluma/ansible-role-elasticsearch/pull/48) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump buluma/dependabot-auto-merge-action from 2.1.2 to 2.1.3 [\#46](https://github.com/buluma/ansible-role-elasticsearch/pull/46) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump buluma/dependabot-auto-merge-action from 2.1.1 to 2.1.2 [\#44](https://github.com/buluma/ansible-role-elasticsearch/pull/44) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump release-drafter/release-drafter from 5 to 6 [\#42](https://github.com/buluma/ansible-role-elasticsearch/pull/42) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [1.2.0](https://github.com/buluma/ansible-role-elasticsearch/tree/1.2.0) (2024-01-20)
@@ -39,7 +41,6 @@
 
 **Merged pull requests:**
 
-- Bump buluma/dependabot-auto-merge-action from 2.1.1 to 2.1.2 [\#44](https://github.com/buluma/ansible-role-elasticsearch/pull/44) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump buluma/molecule-action from 6.0.1 to 6.0.3 [\#41](https://github.com/buluma/ansible-role-elasticsearch/pull/41) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump buluma/molecule-action from 6.0.0 to 6.0.1 [\#40](https://github.com/buluma/ansible-role-elasticsearch/pull/40) ([dependabot[bot]](https://github.com/apps/dependabot))
 
